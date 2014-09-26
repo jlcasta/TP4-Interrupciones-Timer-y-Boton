@@ -23,6 +23,8 @@ int main(void) {
 	bsp_init();
 
 	while (1) {
+		bsp_delayMS(1000);
+		led_toggle(1);
 
 	}
 }
@@ -47,11 +49,10 @@ void APP_ISR_sw(void){
 }
 
 void APP_ISR_1ms(void){
-
-	static uint16_t count_1ms = 0;
-
-	if (count_1ms++ > 1000) {
+	static uint16_t count_1s = 1000;
+	count_1s--;
+	if (count_1s) {
 		led_toggle(0);
-		count_1ms = 0;
+		count_1s = 1000;
 	}
 	}

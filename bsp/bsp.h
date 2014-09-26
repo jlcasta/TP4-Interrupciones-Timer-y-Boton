@@ -25,4 +25,8 @@ uint8_t sw_getState();
  */
 void bsp_init();
 
+
+void bsp_delayMS(uint16_t x);
+
+
 #endif
